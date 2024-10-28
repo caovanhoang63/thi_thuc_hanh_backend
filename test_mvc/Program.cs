@@ -18,14 +18,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddAutoMapper(typeof(AppMappingProfile));
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
 
 // Dependency Injection
 builder.Services.AddScoped<IProductRepository, ProductEFRepo>();
-builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IUserRepository,UserEFRepo>();
 builder.Services.AddScoped<ICategoryRepository, CategoryEFRepo>();
+
+
+builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Controller Configuration
 builder.Services.AddControllers()

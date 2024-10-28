@@ -14,6 +14,7 @@ public class ProductUpdate
     public decimal Price { get; set; }
 
     public string Description { get; set; }
+    public string Image { get; set; }
 
     [Required(ErrorMessage = "Danh mục sản phẩm là bắt buộc")]
     public int CategoryId { get; set; }
